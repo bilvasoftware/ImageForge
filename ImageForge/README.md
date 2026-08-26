@@ -26,23 +26,23 @@ ImageForge currently provides five focused image tools:
 
 ### Image Converter
 
-![ImageForge Converter](docs/images/imageforge-converter.png)
+![ImageForge Converter](images/imageforge-converter.png)
 
 ### Image Compressor
 
-![ImageForge Compressor](docs/images/imageforge-compressor.png)
+![ImageForge Compressor](images/imageforge-compressor.png)
 
 ### Image Resizer
 
-![ImageForge Resizer](docs/images/imageforge-resizer.png)
+![ImageForge Resizer](images/imageforge-resizer.png)
 
 ### Image Cropper
 
-![ImageForge Cropper](docs/images/imageforge-cropper.png)
+![ImageForge Cropper](images/imageforge-cropper.png)
 
 ### Image Watermark
 
-![ImageForge Watermark](docs/images/imageforge-watermark.png)
+![ImageForge Watermark](images/imageforge-watermark.png)
 
 ---
 
