@@ -1,0 +1,433 @@
+﻿@{
+    ViewData["Title"] = "Image Converter";
+}
+
+<section class="hero-section">
+
+    <div class="hero-glow glow-one"></div>
+    <div class="hero-glow glow-two"></div>
+
+    <div class="container">
+
+        <!-- =========================
+             HERO
+             ========================= -->
+
+        <div class="hero-content">
+
+            <div class="hero-badge">
+                <span class="status-dot"></span>
+                Fast & Simple Image Tools
+            </div>
+
+            <h1>
+                Transform Your Images
+                <span>Effortlessly.</span>
+            </h1>
+
+            <p class="hero-description">
+                Convert, compress and resize your images with a clean,
+                fast and easy-to-use online tool.
+            </p>
+
+        </div>
+
+
+        <div class="imageforge-privacy-notice">
+            <div class="imageforge-privacy-icon">
+                🔒
+            </div>
+
+            <div class="imageforge-privacy-content">
+                <strong>Private &amp; Secure</strong>
+
+                <p>
+                    Your images are processed only for the operation you request.
+                    <b>We do not permanently store, sell, share, or reuse your images.</b>
+                </p>
+
+                <span>
+                    Free to use <i>•</i>
+                    No account required <i>•</i>
+                    Privacy focused
+                </span>
+            </div>
+        </div>
+
+        <!-- =========================
+             CONVERTER CARD
+             ========================= -->
+
+        <div class="converter-card">
+
+            <!-- =========================
+                 UPLOAD ZONE
+                 ========================= -->
+
+            <div class="upload-zone"
+                 id="uploadZone">
+
+                <div class="upload-icon">
+                    ↑
+                </div>
+
+                <h2>
+                    Drop your images here
+                </h2>
+
+                <p>
+                    Drag & drop your images or choose files from your device.
+                </p>
+
+
+                <!-- Browse Button -->
+
+                <label for="imageInput"
+                       class="browse-button">
+
+                    <span>＋</span>
+                    Browse Files
+
+                </label>
+
+
+                <!-- File Input -->
+
+                <input type="file"
+                       id="imageInput"
+                       name="files"
+                       accept="image/*"
+                       multiple
+                       hidden />
+
+
+                <!-- Supported Formats -->
+
+                <div class="supported-formats">
+
+                    <span>JPG</span>
+                    <span>PNG</span>
+                    <span>WEBP</span>
+                    <span>BMP</span>
+                    <span>GIF</span>
+                    <span>TIFF</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 SELECTED IMAGES
+                 ========================= -->
+
+            <div class="selected-section"
+                 id="selectedSection"
+                 hidden>
+
+                <!-- Section Header -->
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <h3>
+                            Your Images
+                        </h3>
+
+                        <p id="imageCount">
+                            0 images selected
+                        </p>
+
+                    </div>
+
+
+                    <button type="button"
+                            class="clear-button"
+                            id="clearImages">
+
+                        Clear All
+
+                    </button>
+
+                </div>
+
+
+                <!-- Image Preview Grid -->
+
+                <div class="image-grid"
+                     id="imageGrid">
+                </div>
+
+
+                <!-- =========================
+                     SETTINGS
+                     ========================= -->
+
+                <div class="settings-panel">
+
+
+                    <!-- Output Format -->
+
+                    <div class="setting-item">
+
+                        <label for="outputFormat">
+                            Convert To
+                        </label>
+
+                        <select id="outputFormat"
+                                class="modern-select">
+
+                            <option value="webp">
+                                WEBP
+                            </option>
+
+                            <option value="jpg">
+                                JPG
+                            </option>
+
+                            <option value="png">
+                                PNG
+                            </option>
+
+                            <option value="bmp">
+                                BMP
+                            </option>
+
+                            <option value="gif">
+                                GIF
+                            </option>
+
+                            <option value="tiff">
+                                TIFF
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- =========================
+                         COMPRESSION
+                         ========================= -->
+
+                    <div class="setting-item compression-setting">
+
+                        <div class="quality-header">
+
+                            <label for="quality">
+                                Compression Quality
+                            </label>
+
+                            <span id="qualityValue">
+                                85%
+                            </span>
+
+                        </div>
+
+
+                        <!-- Quality Slider -->
+
+                        <input type="range"
+                               id="quality"
+                               class="quality-slider"
+                               min="1"
+                               max="100"
+                               value="85" />
+
+
+                        <!-- Quality Scale -->
+
+                        <div class="quality-scale">
+
+                            <span>
+                                Smaller
+                            </span>
+
+                            <span>
+                                Balanced
+                            </span>
+
+                            <span>
+                                Quality
+                            </span>
+
+                        </div>
+
+
+                        <!-- =========================
+                             COMPRESSION MODES
+                             ========================= -->
+
+                        <div class="compression-mode-title">
+                            Compression Mode
+                        </div>
+
+
+                        <div class="compression-modes">
+
+
+                            <!-- Maximum Quality -->
+
+                            <button type="button"
+                                    class="compression-mode"
+                                    data-quality="95">
+
+                                <span class="compression-radio"></span>
+
+                                <span class="compression-mode-content">
+
+                                    <strong>
+                                        Maximum Quality
+                                    </strong>
+
+                                    <small>
+                                        Preserve maximum image quality
+                                    </small>
+
+                                </span>
+
+                            </button>
+
+
+                            <!-- Balanced -->
+
+                            <button type="button"
+                                    class="compression-mode active"
+                                    data-quality="85">
+
+                                <span class="compression-radio"></span>
+
+                                <span class="compression-mode-content">
+
+                                    <strong>
+                                        Balanced
+                                    </strong>
+
+                                    <small>
+                                        Best balance between quality and size
+                                    </small>
+
+                                </span>
+
+                            </button>
+
+
+                            <!-- Smallest File -->
+
+                            <button type="button"
+                                    class="compression-mode"
+                                    data-quality="60">
+
+                                <span class="compression-radio"></span>
+
+                                <span class="compression-mode-content">
+
+                                    <strong>
+                                        Smallest File
+                                    </strong>
+
+                                    <small>
+                                        Maximum compression and smaller files
+                                    </small>
+
+                                </span>
+
+                            </button>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     CONVERT BUTTON
+                     ========================= -->
+
+                <button type="button"
+                        class="convert-button"
+                        id="convertButton">
+
+                    <span>⚡</span>
+
+                    Convert Images
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             FEATURE CARDS
+             ========================= -->
+
+        <div class="features-section">
+
+
+            <!-- Fast Conversion -->
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    ⚡
+                </div>
+
+                <h3>
+                    Fast Conversion
+                </h3>
+
+                <p>
+                    Convert your images quickly with a simple workflow.
+                </p>
+
+            </div>
+
+
+            <!-- Privacy -->
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🔒
+                </div>
+
+                <h3>
+                    Privacy Focused
+                </h3>
+
+                <p>
+                    Your images are processed securely and handled responsibly.
+                </p>
+
+            </div>
+
+
+            <!-- Easy to Use -->
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    ✨
+                </div>
+
+                <h3>
+                    Easy to Use
+                </h3>
+
+                <p>
+                    A clean interface designed for both desktop and mobile.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>

@@ -1,0 +1,685 @@
+﻿@{
+    ViewData["Title"] = "Image Watermark";
+}
+
+
+<div class="image-forge-tool watermark-tool">
+
+
+
+    <!-- ===================================================== -->
+    <!-- HERO -->
+    <!-- ===================================================== -->
+
+    <div class="hero-content">
+
+        <div class="hero-badge">
+
+            <span class="status-dot"></span>
+
+            Fast & Simple Image Tools
+
+        </div>
+
+
+        <h1>
+
+            Add Watermarks
+
+            <span>Effortlessly.</span>
+
+        </h1>
+
+
+        <p class="hero-description">
+
+            Protect your images with your own logo or watermark
+
+            while keeping your photos looking sharp and clear.
+
+        </p>
+
+    </div>
+
+
+
+    <div class="imageforge-privacy-notice">
+        <div class="imageforge-privacy-icon">
+            🔒
+        </div>
+
+        <div class="imageforge-privacy-content">
+            <strong>Private &amp; Secure</strong>
+
+            <p>
+                Your images are processed only for the operation you request.
+                <b>We do not permanently store, sell, share, or reuse your images.</b>
+            </p>
+
+            <span>
+                Free to use <i>•</i>
+                No account required <i>•</i>
+                Privacy focused
+            </span>
+        </div>
+    </div>
+
+    <!-- =========================
+             CONVERTER CARD
+             ========================= -->
+
+    <div class="converter-card">
+
+    <!-- ===================================================== -->
+    <!-- MAIN IMAGE UPLOAD -->
+    <!-- ===================================================== -->
+
+    
+
+        <div id="watermarkUploadZone"
+             class="watermark-upload-zone">
+
+            <input type="file"
+                   id="watermarkImageInput"
+                   accept="image/jpeg,image/png,image/webp"
+                   hidden />
+
+            <div class="watermark-upload-icon">
+                ↑
+            </div>
+
+           <h2>
+
+                Drop your image here
+
+            </h2>
+
+
+            <p>
+
+                Drag & drop your image or choose a file from your device.
+
+            </p>
+
+            <button type="button"
+                    id="watermarkChooseImage"
+                    class="watermark-primary-button">
+
+                Choose Image
+
+            </button>
+
+            <span class="watermark-upload-hint">
+                JPG, PNG, or WEBP
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===================================================== -->
+    <!-- WORKSPACE -->
+    <!-- ===================================================== -->
+
+    <section id="watermarkWorkspace"
+             class="watermark-workspace"
+             hidden>
+
+
+        <!-- ================================================= -->
+        <!-- PREVIEW -->
+        <!-- ================================================= -->
+
+        <div class="watermark-preview-card">
+
+            <div class="watermark-card-header">
+
+                <div>
+
+                    <h2>
+                        Preview
+                    </h2>
+
+                    <p id="watermarkImageInfo">
+                        Select an image.
+                    </p>
+
+                </div>
+
+                <button type="button"
+                        id="watermarkClearImage"
+                        class="watermark-secondary-button">
+
+                    Change Image
+
+                </button>
+
+            </div>
+
+
+            <div id="watermarkCanvasContainer"
+                 class="watermark-canvas-container">
+
+                <canvas id="watermarkCanvas"></canvas>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================================================= -->
+        <!-- SETTINGS -->
+        <!-- ================================================= -->
+
+        <div class="watermark-settings-card">
+
+            <div class="watermark-card-header">
+
+                <div>
+
+                    <h2>
+                        Watermark
+                    </h2>
+
+                    <p>
+                        Upload the watermark you want to use.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ============================================= -->
+            <!-- WATERMARK UPLOAD -->
+            <!-- ============================================= -->
+
+            <div class="watermark-setting">
+
+                <label class="watermark-label"
+                       for="watermarkOverlayInput">
+
+                    Watermark image
+
+                </label>
+
+
+                <input type="file"
+                       id="watermarkOverlayInput"
+                       accept="image/png,image/jpeg,image/webp"
+                       hidden />
+
+
+                <button type="button"
+                        id="watermarkChooseOverlay"
+                        class="watermark-secondary-button watermark-full-button">
+
+                    Upload Watermark
+
+                </button>
+
+
+                <div id="watermarkOverlayInfo"
+                     class="watermark-file-info">
+
+                    No watermark selected.
+
+                </div>
+
+            </div>
+
+
+            <!-- ============================================= -->
+            <!-- OPACITY -->
+            <!-- ============================================= -->
+
+            <div class="watermark-setting">
+
+                <div class="watermark-label-row">
+
+                    <label for="watermarkOpacity"
+                           class="watermark-label">
+
+                        Opacity
+
+                    </label>
+
+                    <span id="watermarkOpacityValue">
+                        50%
+                    </span>
+
+                </div>
+
+
+                <input type="range"
+                       id="watermarkOpacity"
+                       min="0"
+                       max="100"
+                       value="50"
+                       step="1" />
+
+            </div>
+
+
+            <!-- ============================================= -->
+            <!-- SIZE -->
+            <!-- ============================================= -->
+
+            <div class="watermark-setting">
+
+                <div class="watermark-label-row">
+
+                    <label for="watermarkScale"
+                           class="watermark-label">
+
+                        Size
+
+                    </label>
+
+                    <span id="watermarkScaleValue">
+                        25%
+                    </span>
+
+                </div>
+
+
+                <input type="range"
+                       id="watermarkScale"
+                       min="5"
+                       max="100"
+                       value="25"
+                       step="1" />
+
+            </div>
+
+
+            <!-- ============================================= -->
+            <!-- POSITION -->
+            <!-- ============================================= -->
+
+            <div class="watermark-setting">
+
+                <label class="watermark-label">
+                    Position
+                </label>
+
+
+                <div class="watermark-position-grid">
+
+                    <button type="button"
+                            class="watermark-position-button"
+                            data-position="top-left"
+                            aria-label="Top left">
+
+                        ↖
+
+                    </button>
+
+
+                    <button type="button"
+                            class="watermark-position-button"
+                            data-position="top-center"
+                            aria-label="Top center">
+
+                        ↑
+
+                    </button>
+
+
+                    <button type="button"
+                            class="watermark-position-button"
+                            data-position="top-right"
+                            aria-label="Top right">
+
+                        ↗
+
+                    </button>
+
+
+                    <button type="button"
+                            class="watermark-position-button"
+                            data-position="center-left"
+                            aria-label="Center left">
+
+                        ←
+
+                    </button>
+
+
+                    <button type="button"
+                            class="watermark-position-button active"
+                            data-position="center"
+                            aria-label="Center">
+
+                        •
+
+                    </button>
+
+
+                    <button type="button"
+                            class="watermark-position-button"
+                            data-position="center-right"
+                            aria-label="Center right">
+
+                        →
+
+                    </button>
+
+
+                    <button type="button"
+                            class="watermark-position-button"
+                            data-position="bottom-left"
+                            aria-label="Bottom left">
+
+                        ↙
+
+                    </button>
+
+
+                    <button type="button"
+                            class="watermark-position-button"
+                            data-position="bottom-center"
+                            aria-label="Bottom center">
+
+                        ↓
+
+                    </button>
+
+
+                    <button type="button"
+                            class="watermark-position-button"
+                            data-position="bottom-right"
+                            aria-label="Bottom right">
+
+                        ↘
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ============================================= -->
+            <!-- MARGIN -->
+            <!-- ============================================= -->
+
+            <div class="watermark-setting">
+
+                <div class="watermark-label-row">
+
+                    <label for="watermarkMargin"
+                           class="watermark-label">
+
+                        Margin
+
+                    </label>
+
+                    <span id="watermarkMarginValue">
+                        20 px
+                    </span>
+
+                </div>
+
+
+                <input type="range"
+                       id="watermarkMargin"
+                       min="0"
+                       max="200"
+                       value="20"
+                       step="1" />
+
+            </div>
+
+
+            <!-- ============================================= -->
+            <!-- OUTPUT FORMAT -->
+            <!-- ============================================= -->
+
+            <div class="watermark-setting">
+
+                <label for="watermarkOutputFormat"
+                       class="watermark-label">
+
+                    Output format
+
+                </label>
+
+
+                <select id="watermarkOutputFormat"
+                        class="watermark-select">
+
+                    <option value="jpeg">
+                        JPG
+                    </option>
+
+                    <option value="png">
+                        PNG
+                    </option>
+
+                    <option value="webp">
+                        WEBP
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- ============================================= -->
+            <!-- ACTIONS -->
+            <!-- ============================================= -->
+
+            <div class="watermark-actions">
+
+                <button type="button"
+                        id="watermarkResetButton"
+                        class="watermark-secondary-button">
+
+                    Reset
+
+                </button>
+
+
+                <button type="button"
+                        id="watermarkApplyButton"
+                        class="watermark-primary-button">
+
+                    Apply Watermark
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===================================================== -->
+    <!-- RESULT -->
+    <!-- ===================================================== -->
+
+    <section id="watermarkResultSection"
+             class="watermark-result-section"
+             hidden>
+
+        <div class="watermark-result-card">
+
+
+            <div class="watermark-card-header">
+
+                <div>
+
+                    <h2>
+                        Watermarked Image
+                    </h2>
+
+                    <p id="watermarkResultFileName">
+                        watermarked-image.jpg
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ============================================= -->
+            <!-- RESULT IMAGE -->
+            <!-- ============================================= -->
+
+            <div class="watermark-result-preview">
+
+                <img id="watermarkResultImage"
+                     src=""
+                     alt="Watermarked image" />
+
+            </div>
+
+
+            <!-- ============================================= -->
+            <!-- RESULT DETAILS -->
+            <!-- ============================================= -->
+
+            <div class="watermark-result-details">
+
+                <div>
+
+                    <span>
+                        Width
+                    </span>
+
+                    <strong id="watermarkResultWidth">
+                        0 px
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Height
+                    </span>
+
+                    <strong id="watermarkResultHeight">
+                        0 px
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Size
+                    </span>
+
+                    <strong id="watermarkResultSize">
+                        0 Bytes
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- ============================================= -->
+            <!-- RESULT ACTIONS -->
+            <!-- ============================================= -->
+
+            <div class="watermark-result-actions">
+
+                <button type="button"
+                        id="watermarkDownloadButton"
+                        class="watermark-primary-button">
+
+                    Download Image
+
+                </button>
+
+
+                <button type="button"
+                        id="watermarkAnotherButton"
+                        class="watermark-secondary-button">
+
+                    Watermark Another Image
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===================================================== -->
+    <!-- FEATURES -->
+    <!-- ===================================================== -->
+
+    <section class="features-section watermark-features">
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                🖼️
+            </div>
+
+            <h3>
+                Custom Watermark
+            </h3>
+
+            <p>
+                Add your own logo or watermark image to your photos.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                🎚️
+            </div>
+
+            <h3>
+                Adjust Opacity & Size
+            </h3>
+
+            <p>
+                Control the watermark transparency and size for the perfect result.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                📍
+            </div>
+
+            <h3>
+                Precise Positioning
+            </h3>
+
+            <p>
+                Place your watermark in any of nine convenient positions.
+            </p>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+@section Scripts {
+
+    <script src="~/js/image-watermark.js"
+            asp-append-version="true">
+    </script>
+
+}

@@ -1,0 +1,552 @@
+﻿@{
+    ViewData["Title"] = "Image Resizer";
+}
+
+<section class="hero-section resizer-page">
+
+    <div class="hero-glow glow-one"></div>
+    <div class="hero-glow glow-two"></div>
+
+    <div class="container">
+
+        <!-- =========================
+             HERO
+             ========================= -->
+
+        <div class="hero-content">
+
+            <div class="hero-badge">
+                <span class="status-dot"></span>
+                Fast & Simple Image Tools
+            </div>
+
+            <h1>
+                Resize Your Images
+                <span>Effortlessly.</span>
+            </h1>
+
+            <p class="hero-description">
+                Resize your images to exact dimensions or scale them
+                by percentage while keeping them sharp and clear.
+            </p>
+
+        </div>
+
+
+        <div class="imageforge-privacy-notice">
+    <div class="imageforge-privacy-icon">
+        🔒
+    </div>
+
+    <div class="imageforge-privacy-content">
+        <strong>Private &amp; Secure</strong>
+
+        <p>
+            Your images are processed only for the operation you request.
+            <b>We do not permanently store, sell, share, or reuse your images.</b>
+        </p>
+
+        <span>
+            Free to use <i>•</i>
+            No account required <i>•</i>
+            Privacy focused
+        </span>
+    </div>
+</div>
+
+        <!-- =========================
+             RESIZER CARD
+             ========================= -->
+
+        <div class="converter-card">
+
+            <!-- =========================
+                 UPLOAD ZONE
+                 ========================= -->
+
+            <div class="upload-zone"
+                 id="resizeUploadZone">
+
+                <div class="upload-icon">
+                    ↕
+                </div>
+
+                <h2>
+                    Drop your images here
+                </h2>
+
+                <p>
+                    Drag & drop your images or choose files from your device.
+                </p>
+
+                <label for="resizeImageInput"
+                       class="browse-button">
+
+                    <span>＋</span>
+                    Browse Files
+
+                </label>
+
+                <input type="file"
+                       id="resizeImageInput"
+                       name="files"
+                       accept="image/jpeg,image/png,image/webp"
+                       multiple
+                       hidden />
+
+                <div class="supported-formats">
+
+                    <span>JPG</span>
+                    <span>PNG</span>
+                    <span>WEBP</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 SELECTED IMAGES
+                 ========================= -->
+
+            <div class="selected-section"
+                 id="resizeSelectedSection"
+                 hidden>
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <h3>
+                            Your Images
+                        </h3>
+
+                        <p id="resizeImageCount">
+                            0 images selected
+                        </p>
+
+                    </div>
+
+                    <button type="button"
+                            class="clear-button"
+                            id="resizeClearImages">
+
+                        Clear All
+
+                    </button>
+
+                </div>
+
+
+                <!-- =========================
+                     IMAGE GRID
+                     ========================= -->
+
+                <div class="image-grid"
+                     id="resizeImageGrid">
+                </div>
+
+
+                <!-- =========================
+                     SETTINGS
+                     ========================= -->
+
+                <div class="resize-settings-panel">
+
+
+                    <!-- =========================
+                         RESIZE METHOD
+                         ========================= -->
+
+                    <div class="resize-setting-block">
+
+                        <label class="resize-setting-title">
+                            Resize Method
+                        </label>
+
+                        <div class="resize-method-options">
+
+                            <label class="resize-method-option">
+
+                                <input type="radio"
+                                       name="resizeMethod"
+                                       id="resizeDimensionsMode"
+                                       value="dimensions"
+                                       checked />
+
+                                <span class="resize-method-content">
+
+                                    <strong>
+                                        Width & Height
+                                    </strong>
+
+                                    <small>
+                                        Set exact dimensions in pixels.
+                                    </small>
+
+                                </span>
+
+                            </label>
+
+
+                            <label class="resize-method-option">
+
+                                <input type="radio"
+                                       name="resizeMethod"
+                                       id="resizePercentageMode"
+                                       value="percentage" />
+
+                                <span class="resize-method-content">
+
+                                    <strong>
+                                        Percentage
+                                    </strong>
+
+                                    <small>
+                                        Scale the original image by percentage.
+                                    </small>
+
+                                </span>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =========================
+                         DIMENSIONS
+                         ========================= -->
+
+                    <div class="resize-dimensions-settings"
+                         id="resizeDimensionsSettings">
+
+                        <div class="resize-dimension-grid">
+
+                            <div class="setting-item">
+
+                                <label for="resizeWidth">
+                                    Width
+                                </label>
+
+                                <div class="resize-input-with-unit">
+
+                                    <input type="number"
+                                           id="resizeWidth"
+                                           class="modern-input"
+                                           min="1"
+                                           max="10000"
+                                           step="1"
+                                           placeholder="1920" />
+
+                                    <span class="resize-input-unit">
+                                        px
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="resize-dimension-link">
+                                <span>×</span>
+                            </div>
+
+
+                            <div class="setting-item">
+
+                                <label for="resizeHeight">
+                                    Height
+                                </label>
+
+                                <div class="resize-input-with-unit">
+
+                                    <input type="number"
+                                           id="resizeHeight"
+                                           class="modern-input"
+                                           min="1"
+                                           max="10000"
+                                           step="1"
+                                           placeholder="1080" />
+
+                                    <span class="resize-input-unit">
+                                        px
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <label class="aspect-ratio-option">
+
+                            <input type="checkbox"
+                                   id="resizeKeepAspect"
+                                   checked />
+
+                            <span class="aspect-checkbox">
+                                ✓
+                            </span>
+
+                            <span class="aspect-content">
+
+                                <strong>
+                                    Keep Aspect Ratio
+                                </strong>
+
+                                <small>
+                                    Automatically preserve the original image proportions.
+                                </small>
+
+                            </span>
+
+                        </label>
+
+                    </div>
+
+
+                    <!-- =========================
+                         PERCENTAGE
+                         ========================= -->
+
+                    <div class="resize-percentage-settings"
+                         id="resizePercentageSettings"
+                         hidden>
+
+                        <div class="setting-item">
+
+                            <label for="resizePercentage">
+                                Scale Percentage
+                            </label>
+
+                            <div class="percentage-input-wrapper">
+
+                                <input type="number"
+                                       id="resizePercentage"
+                                       class="modern-input"
+                                       min="1"
+                                       max="500"
+                                       step="1"
+                                       value="50"
+                                       placeholder="50" />
+
+                                <span class="percentage-symbol">
+                                    %
+                                </span>
+
+                            </div>
+
+                            <small class="setting-help">
+                                100% keeps the original dimensions.
+                                50% makes the image half its original size.
+                            </small>
+
+                        </div>
+
+
+                        <div class="percentage-presets">
+
+                            <button type="button"
+                                    class="percentage-preset"
+                                    data-resize-percentage="25">
+
+                                25%
+
+                            </button>
+
+                            <button type="button"
+                                    class="percentage-preset"
+                                    data-resize-percentage="50">
+
+                                50%
+
+                            </button>
+
+                            <button type="button"
+                                    class="percentage-preset"
+                                    data-resize-percentage="75">
+
+                                75%
+
+                            </button>
+
+                            <button type="button"
+                                    class="percentage-preset active"
+                                    data-resize-percentage="100">
+
+                                100%
+
+                            </button>
+
+                            <button type="button"
+                                    class="percentage-preset"
+                                    data-resize-percentage="150">
+
+                                150%
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =========================
+                         OUTPUT FORMAT
+                         ========================= -->
+
+                    <div class="resize-output-setting">
+
+                        <div class="setting-item">
+
+                            <label for="resizeOutputFormat">
+                                Output Format
+                            </label>
+
+                            <select id="resizeOutputFormat"
+                                    class="modern-select">
+
+                                <option value="original">
+                                    Keep Original
+                                </option>
+
+                                <option value="webp">
+                                    WEBP
+                                </option>
+
+                                <option value="jpg">
+                                    JPG
+                                </option>
+
+                                <option value="png">
+                                    PNG
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="setting-item">
+
+                            <label for="resizeQuality">
+                                Image Quality
+                            </label>
+
+                            <div class="quality-header">
+
+                                <input type="range"
+                                       id="resizeQuality"
+                                       class="quality-slider"
+                                       min="1"
+                                       max="100"
+                                       value="85" />
+
+                                <span id="resizeQualityValue">
+                                    85%
+                                </span>
+
+                            </div>
+
+                            <small class="setting-help">
+                                Used when exporting JPG or WEBP.
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     RESIZE BUTTON
+                     ========================= -->
+
+                <button type="button"
+                        class="convert-button"
+                        id="resizeButton">
+
+                    <span>↕</span>
+
+                    Resize Images
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             FEATURES
+             ========================= -->
+
+        <div class="features-section">
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    📐
+                </div>
+
+                <h3>
+                    Exact Dimensions
+                </h3>
+
+                <p>
+                    Set precise width and height values in pixels.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🔗
+                </div>
+
+                <h3>
+                    Keep Proportions
+                </h3>
+
+                <p>
+                    Preserve your original image aspect ratio automatically.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    ⚡
+                </div>
+
+                <h3>
+                    Batch Resize
+                </h3>
+
+                <p>
+                    Resize up to 20 images in one operation.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+@section Scripts {
+
+    <script src="~/js/resizer.js"
+            asp-append-version="true"></script>
+
+}

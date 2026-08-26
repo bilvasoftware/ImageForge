@@ -1,0 +1,1252 @@
+﻿@{
+
+    ViewData["Title"] = "Image Compressor";
+
+}
+
+
+
+<section class="hero-section">
+
+
+
+    <div class="hero-glow glow-one"></div>
+
+    <div class="hero-glow glow-two"></div>
+
+
+
+    <div class="container">
+
+
+
+        <!-- =========================
+
+             HERO
+
+             ========================= -->
+
+
+
+        <div class="hero-content">
+
+
+
+            <div class="hero-badge">
+
+                <span class="status-dot"></span>
+
+                Fast & Simple Image Tools
+
+            </div>
+
+
+
+            <h1>
+
+                Compress Your Images
+
+                <span>Effortlessly.</span>
+
+            </h1>
+
+
+
+            <p class="hero-description">
+
+                Reduce image file sizes while keeping your images
+
+                looking sharp and clear.
+
+            </p>
+
+
+
+        </div>
+
+
+
+        <div class="imageforge-privacy-notice">
+            <div class="imageforge-privacy-icon">
+                🔒
+            </div>
+
+            <div class="imageforge-privacy-content">
+                <strong>Private &amp; Secure</strong>
+
+                <p>
+                    Your images are processed only for the operation you request.
+                    <b>We do not permanently store, sell, share, or reuse your images.</b>
+                </p>
+
+                <span>
+                    Free to use <i>•</i>
+                    No account required <i>•</i>
+                    Privacy focused
+                </span>
+            </div>
+        </div>
+
+        <!-- =========================
+
+             COMPRESSOR CARD
+
+             ========================= -->
+
+
+
+        <div class="converter-card">
+
+
+
+            <!-- =========================
+
+                 UPLOAD ZONE
+
+                 ========================= -->
+
+
+
+            <div class="upload-zone"
+
+                 id="compressUploadZone">
+
+
+
+                <div class="upload-icon">
+
+                    ↓
+
+                </div>
+
+
+
+                <h2>
+
+                    Drop your images here
+
+                </h2>
+
+
+
+                <p>
+
+                    Drag & drop your images or choose files from your device.
+
+                </p>
+
+
+
+
+
+                <!-- Browse Button -->
+
+
+
+                <label for="compressImageInput"
+
+                       class="browse-button">
+
+
+
+                    <span>＋</span>
+
+                    Browse Files
+
+
+
+                </label>
+
+
+
+
+
+                <!-- File Input -->
+
+
+
+                <input type="file"
+
+                       id="compressImageInput"
+
+                       name="files"
+
+                       accept="image/jpeg,image/png,image/webp"
+
+                       multiple
+
+                       hidden />
+
+
+
+
+
+                <!-- Supported Formats -->
+
+
+
+                <div class="supported-formats">
+
+
+
+                    <span>JPG</span>
+
+                    <span>PNG</span>
+
+                    <span>WEBP</span>
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+
+
+            <!-- =========================
+
+                 SELECTED IMAGES
+
+                 ========================= -->
+
+
+
+            <div class="selected-section"
+
+                 id="compressSelectedSection"
+
+                 hidden>
+
+
+
+                <!-- =========================
+
+                     SECTION HEADER
+
+                     ========================= -->
+
+
+
+                <div class="section-heading">
+
+
+
+                    <div>
+
+
+
+                        <h3>
+
+                            Your Images
+
+                        </h3>
+
+
+
+                        <p id="compressImageCount">
+
+                            0 images selected
+
+                        </p>
+
+
+
+                    </div>
+
+
+
+
+
+                    <button type="button"
+
+                            class="clear-button"
+
+                            id="compressClearImages">
+
+
+
+                        Clear All
+
+
+
+                    </button>
+
+
+
+                </div>
+
+
+
+
+
+                <!-- =========================
+
+                     IMAGE PREVIEW GRID
+
+                     ========================= -->
+
+
+
+                <div class="image-grid"
+
+                     id="compressImageGrid">
+
+                </div>
+
+
+
+
+
+                <!-- =========================
+
+                     SETTINGS
+
+                     ========================= -->
+
+
+
+                <div class="settings-panel">
+
+
+
+
+
+                    <!-- =========================
+
+                         OUTPUT FORMAT
+
+                         ========================= -->
+
+
+
+                    <div class="setting-item">
+
+
+
+                        <label for="compressOutputFormat">
+
+                            Compress To
+
+                        </label>
+
+
+
+                        <select id="compressOutputFormat"
+
+                                class="modern-select">
+
+
+
+                            <option value="webp">
+
+                                WEBP
+
+                            </option>
+
+
+
+                            <option value="jpg">
+
+                                JPG
+
+                            </option>
+
+
+
+                            <option value="png">
+
+                                PNG
+
+                            </option>
+
+
+
+                        </select>
+
+
+
+                    </div>
+
+
+
+
+
+                    <!-- =========================
+
+                         TARGET FILE SIZE
+
+                         ========================= -->
+
+
+
+                    <div class="setting-item">
+
+
+
+                        <label for="targetSize">
+
+                            Target File Size
+
+                        </label>
+
+
+
+                        <div class="target-size-row">
+
+
+
+                            <input type="number"
+
+                                   id="targetSize"
+
+                                   class="modern-input"
+
+                                   min="1"
+
+                                   max="20480"
+
+                                   step="1"
+
+                                   placeholder="500" />
+
+
+
+                            <select id="targetSizeUnit"
+
+                                    class="modern-select target-size-unit">
+
+
+
+                                <option value="KB">
+
+                                    KB
+
+                                </option>
+
+
+
+                                <option value="MB">
+
+                                    MB
+
+                                </option>
+
+
+
+                            </select>
+
+
+
+                        </div>
+
+
+
+                        <small class="setting-help">
+
+                            Enter the maximum size you want for each image.
+
+                            Example: 500 KB
+
+                        </small>
+
+
+
+                    </div>
+
+
+
+
+
+                    <!-- =========================
+
+                         COMPRESSION MODE
+
+                         ========================= -->
+
+
+
+                    <div class="setting-item">
+
+
+
+                        <label>
+
+                            Compression Method
+
+                        </label>
+
+
+
+
+
+                        <div class="compression-method-options">
+
+
+
+                            <label class="compression-method-option">
+
+
+
+                                <input type="radio"
+
+                                       name="compressionMethod"
+
+                                       id="qualityMode"
+
+                                       value="quality"
+
+                                       checked />
+
+
+
+                                <span class="compression-method-content">
+
+
+
+                                    <strong>
+
+                                        Quality Based
+
+                                    </strong>
+
+
+
+                                    <small>
+
+                                        Compress using the selected quality level.
+
+                                    </small>
+
+
+
+                                </span>
+
+
+
+                            </label>
+
+
+
+
+
+                            <label class="compression-method-option">
+
+
+
+                                <input type="radio"
+
+                                       name="compressionMethod"
+
+                                       id="sizeMode"
+
+                                       value="size" />
+
+
+
+                                <span class="compression-method-content">
+
+
+
+                                    <strong>
+
+                                        Target Size
+
+                                    </strong>
+
+
+
+                                    <small>
+
+                                        Automatically try to reach your target file size.
+
+                                    </small>
+
+
+
+                                </span>
+
+
+
+                            </label>
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+
+
+                    <!-- =========================
+
+                         QUALITY
+
+                         ========================= -->
+
+
+
+                    <div class="setting-item compression-setting"
+
+                         id="qualitySettings">
+
+
+
+                        <div class="quality-header">
+
+
+
+                            <label for="compressQuality">
+
+                                Compression Quality
+
+                            </label>
+
+
+
+                            <span id="compressQualityValue">
+
+                                85%
+
+                            </span>
+
+
+
+                        </div>
+
+
+
+
+
+                        <input type="range"
+
+                               id="compressQuality"
+
+                               class="quality-slider"
+
+                               min="1"
+
+                               max="100"
+
+                               value="85" />
+
+
+
+
+
+                        <div class="quality-scale">
+
+
+
+                            <span>
+
+                                Smaller
+
+                            </span>
+
+
+
+                            <span>
+
+                                Balanced
+
+                            </span>
+
+
+
+                            <span>
+
+                                Quality
+
+                            </span>
+
+
+
+                        </div>
+
+
+
+
+
+                        <!-- =========================
+
+                             COMPRESSION MODES
+
+                             ========================= -->
+
+
+
+                        <div class="compression-mode-title">
+
+                            Compression Mode
+
+                        </div>
+
+
+
+
+
+                        <div class="compression-modes">
+
+
+
+
+
+                            <!-- Maximum Quality -->
+
+
+
+                            <button type="button"
+
+                                    class="compression-mode"
+
+                                    data-compress-quality="95">
+
+
+
+                                <span class="compression-radio"></span>
+
+
+
+                                <span class="compression-mode-content">
+
+
+
+                                    <strong>
+
+                                        Maximum Quality
+
+                                    </strong>
+
+
+
+                                    <small>
+
+                                        Preserve maximum image quality
+
+                                    </small>
+
+
+
+                                </span>
+
+
+
+                            </button>
+
+
+
+
+
+                            <!-- Balanced -->
+
+
+
+                            <button type="button"
+
+                                    class="compression-mode active"
+
+                                    data-compress-quality="85">
+
+
+
+                                <span class="compression-radio"></span>
+
+
+
+                                <span class="compression-mode-content">
+
+
+
+                                    <strong>
+
+                                        Balanced
+
+                                    </strong>
+
+
+
+                                    <small>
+
+                                        Best balance between quality and size
+
+                                    </small>
+
+
+
+                                </span>
+
+
+
+                            </button>
+
+
+
+
+
+                            <!-- Smallest File -->
+
+
+
+                            <button type="button"
+
+                                    class="compression-mode"
+
+                                    data-compress-quality="60">
+
+
+
+                                <span class="compression-radio"></span>
+
+
+
+                                <span class="compression-mode-content">
+
+
+
+                                    <strong>
+
+                                        Smallest File
+
+                                    </strong>
+
+
+
+                                    <small>
+
+                                        Maximum compression and smaller files
+
+                                    </small>
+
+
+
+                                </span>
+
+
+
+                            </button>
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+
+
+                    <!-- =========================
+
+                         TARGET SIZE INFO
+
+                         ========================= -->
+
+
+
+                    <div class="target-size-info"
+
+                         id="targetSizeInfo"
+
+                         hidden>
+
+
+
+                        <span>
+
+                            🎯
+
+                        </span>
+
+
+
+                        <div>
+
+
+
+                            <strong>
+
+                                Target Size Enabled
+
+                            </strong>
+
+
+
+                            <small>
+
+                                The compressor will try to keep each
+
+                                compressed image at or below your target size.
+
+                            </small>
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+
+
+                <!-- =========================
+
+                     COMPRESS BUTTON
+
+                     ========================= -->
+
+
+
+                <button type="button"
+
+                        class="convert-button"
+
+                        id="compressButton">
+
+
+
+                    <span>🗜️</span>
+
+
+
+                    Compress Images
+
+
+
+                </button>
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+        <!-- =========================
+
+             FEATURE CARDS
+
+             ========================= -->
+
+
+
+        <div class="features-section">
+
+
+
+
+
+            <!-- Smaller Files -->
+
+
+
+            <div class="feature-card">
+
+
+
+                <div class="feature-icon">
+
+                    🗜️
+
+                </div>
+
+
+
+                <h3>
+
+                    Smaller Files
+
+                </h3>
+
+
+
+                <p>
+
+                    Reduce image sizes to save storage and bandwidth.
+
+                </p>
+
+
+
+            </div>
+
+
+
+
+
+            <!-- Quality Control -->
+
+
+
+            <div class="feature-card">
+
+
+
+                <div class="feature-icon">
+
+                    ✨
+
+                </div>
+
+
+
+                <h3>
+
+                    Quality Control
+
+                </h3>
+
+
+
+                <p>
+
+                    Choose the compression level that works best for you.
+
+                </p>
+
+
+
+            </div>
+
+
+
+
+
+            <!-- Privacy -->
+
+
+
+            <div class="feature-card">
+
+
+
+                <div class="feature-icon">
+
+                    🔒
+
+                </div>
+
+
+
+                <h3>
+
+                    Privacy Focused
+
+                </h3>
+
+
+
+                <p>
+
+                    Your images are processed securely.
+
+                </p>
+
+
+
+            </div>
+
+
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+</section>
+
+
+
+
+
+@section Scripts {
+
+
+
+    <script src="~/js/compressor.js"></script>
+
+
+
+    <script>
+
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+
+
+            const qualityMode =
+
+                document.getElementById("qualityMode");
+
+
+
+            const sizeMode =
+
+                document.getElementById("sizeMode");
+
+
+
+            const qualitySettings =
+
+                document.getElementById("qualitySettings");
+
+
+
+            const targetSize =
+
+                document.getElementById("targetSize");
+
+
+
+            const targetSizeUnit =
+
+                document.getElementById("targetSizeUnit");
+
+
+
+            const targetSizeInfo =
+
+                document.getElementById("targetSizeInfo");
+
+
+
+
+
+            function updateCompressionMode() {
+
+
+
+                if (sizeMode.checked) {
+
+
+
+                    qualitySettings.style.display = "none";
+
+
+
+                    targetSizeInfo.hidden = false;
+
+
+
+                }
+
+                else {
+
+
+
+                    qualitySettings.style.display = "";
+
+
+
+                    targetSizeInfo.hidden = true;
+
+
+
+                }
+
+
+
+            }
+
+
+
+
+
+            qualityMode.addEventListener(
+
+                "change",
+
+                updateCompressionMode
+
+            );
+
+
+
+
+
+            sizeMode.addEventListener(
+
+                "change",
+
+                updateCompressionMode
+
+            );
+
+
+
+
+
+            targetSize.addEventListener(
+
+                "input",
+
+                function () {
+
+
+
+                    let value =
+
+                        parseFloat(targetSize.value);
+
+
+
+                    if (value < 1) {
+
+
+
+                        targetSize.value = "";
+
+
+
+                    }
+
+
+
+                }
+
+            );
+
+
+
+
+
+            updateCompressionMode();
+
+
+
+        });
+
+
+
+    </script>
+
+
+
+}

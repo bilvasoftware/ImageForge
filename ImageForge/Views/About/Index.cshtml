@@ -1,0 +1,1014 @@
+﻿@{
+    ViewData["Title"] = "About BilvaSoftware";
+}
+
+<section class="about-page">
+
+    <!-- =====================================================
+         HERO
+         ===================================================== -->
+
+    <div class="about-hero">
+
+        <div class="about-hero-glow about-glow-one"></div>
+        <div class="about-hero-glow about-glow-two"></div>
+
+
+        <!-- =================================================
+             BILVASOFTWARE LOGO - TOP CENTER
+             ================================================= -->
+        <!-- =====================================================
+     BILVASOFTWARE HERO LOGO
+     ===================================================== -->
+
+        <div class="bilva-top-logo">
+
+            <div class="bilva-logo-box">
+
+                <div class="bilva-logo-glow"></div>
+
+                <img src="~/images/bilvasoftware-logo.png"
+                     alt="BilvaSoftware Logo"
+                     asp-append-version="true"
+                     class="bilva-hero-logo" />
+
+            </div>
+
+            <div class="bilva-top-name">
+                BILVA SOFTWARE
+            </div>
+
+            <div class="bilva-top-subtitle">
+                Software &amp; Digital Tools
+            </div>
+
+        </div>
+
+        <!-- =================================================
+             HERO CONTENT
+             ================================================= -->
+
+        <div class="about-container">
+
+            <div class="about-badge">
+                <span class="about-status-dot"></span>
+                ImageForge by BilvaSoftware
+            </div>
+
+
+            <h1>
+                Simple Tools.
+                <span>Powerful Results.</span>
+            </h1>
+
+
+            <p class="about-hero-description">
+                A focused collection of practical image tools
+                designed to make everyday image processing
+                simple, fast, and accessible.
+            </p>
+
+
+            <div class="about-hero-actions">
+
+                <!-- Opens Converter as its own page -->
+
+                <a asp-controller="Home"
+                   asp-action="Index"
+                   class="about-primary-button">
+
+                    Start Using ImageForge
+
+                    <span>→</span>
+
+                </a>
+
+
+                <a href="#about-tools"
+                   class="about-secondary-button">
+
+                    Explore Tools
+
+                    <span>↓</span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         INTRO
+         ===================================================== -->
+
+    <section class="about-content-section">
+
+        <div class="about-container">
+
+            <div class="about-intro-card">
+
+                <div class="about-intro-icon">
+                    <span>✦</span>
+                </div>
+
+
+                <div class="about-intro-content">
+
+                    <span class="about-label">
+                        ABOUT IMAGEFORGE
+                    </span>
+
+
+                    <h2>
+                        Image processing without the complexity.
+                    </h2>
+
+
+                    <p>
+                        ImageForge brings the most useful everyday
+                        image-processing tools together in one clean
+                        and focused workspace.
+                    </p>
+
+
+                    <p>
+                        Whether you need to convert, compress, resize,
+                        crop, or watermark an image, each tool is designed
+                        around a simple idea: get the job done without
+                        unnecessary complexity.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         TOOLS
+         ===================================================== -->
+
+    <section class="about-content-section"
+             id="about-tools">
+
+        <div class="about-container">
+
+            <div class="about-section-heading">
+
+                <span class="about-label">
+                    IMAGEFORGE TOOLS
+                </span>
+
+
+                <h2>
+                    Everything you need for everyday image tasks.
+                </h2>
+
+
+                <p>
+                    Five focused tools built for common image-processing
+                    workflows.
+                </p>
+
+            </div>
+
+
+
+            <div class="about-tools-grid">
+
+
+                <!-- =================================================
+                     CONVERTER
+                     ================================================= -->
+
+                <a asp-controller="Home"
+                   asp-action="Index"
+                   class="about-tool-card">
+
+                    <div class="about-card-top">
+
+                        <div class="about-tool-icon">
+                            ⇄
+                        </div>
+
+                        <span class="about-card-arrow">
+                            ↗
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Image Converter
+                    </h3>
+
+
+                    <p>
+                        Convert images between supported formats
+                        quickly and easily.
+                    </p>
+
+
+                    <span class="about-tool-link">
+
+                        Open Converter
+
+                        <span>→</span>
+
+                    </span>
+
+                </a>
+
+
+
+                <!-- =================================================
+                     COMPRESSOR
+                     ================================================= -->
+
+                <a asp-controller="Compressor"
+                   asp-action="Index"
+                   class="about-tool-card">
+
+                    <div class="about-card-top">
+
+                        <div class="about-tool-icon">
+                            ◌
+                        </div>
+
+                        <span class="about-card-arrow">
+                            ↗
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Image Compressor
+                    </h3>
+
+
+                    <p>
+                        Reduce image file size while maintaining
+                        a practical balance between quality and size.
+                    </p>
+
+
+                    <span class="about-tool-link">
+
+                        Open Compressor
+
+                        <span>→</span>
+
+                    </span>
+
+                </a>
+
+
+
+                <!-- =================================================
+                     RESIZER
+                     ================================================= -->
+
+                <a asp-controller="Resizer"
+                   asp-action="Index"
+                   class="about-tool-card">
+
+                    <div class="about-card-top">
+
+                        <div class="about-tool-icon">
+                            ↔
+                        </div>
+
+                        <span class="about-card-arrow">
+                            ↗
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Image Resizer
+                    </h3>
+
+
+                    <p>
+                        Resize images to the dimensions you need
+                        with simple and precise controls.
+                    </p>
+
+
+                    <span class="about-tool-link">
+
+                        Open Resizer
+
+                        <span>→</span>
+
+                    </span>
+
+                </a>
+
+
+
+                <!-- =================================================
+                     CROPPER
+                     ================================================= -->
+
+                <a asp-controller="Cropper"
+                   asp-action="Index"
+                   class="about-tool-card">
+
+                    <div class="about-card-top">
+
+                        <div class="about-tool-icon">
+                            ✂
+                        </div>
+
+                        <span class="about-card-arrow">
+                            ↗
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Image Cropper
+                    </h3>
+
+
+                    <p>
+                        Select the exact area you want to keep
+                        with flexible crop controls.
+                    </p>
+
+
+                    <span class="about-tool-link">
+
+                        Open Cropper
+
+                        <span>→</span>
+
+                    </span>
+
+                </a>
+
+
+
+                <!-- =================================================
+                     WATERMARK
+                     ================================================= -->
+
+                <a asp-controller="Watermark"
+                   asp-action="Index"
+                   class="about-tool-card">
+
+                    <div class="about-card-top">
+
+                        <div class="about-tool-icon">
+                            ◇
+                        </div>
+
+                        <span class="about-card-arrow">
+                            ↗
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Image Watermark
+                    </h3>
+
+
+                    <p>
+                        Add text or image watermarks to identify
+                        and protect your images.
+                    </p>
+
+
+                    <span class="about-tool-link">
+
+                        Open Watermark
+
+                        <span>→</span>
+
+                    </span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         WHY IMAGEFORGE
+         ===================================================== -->
+
+    <section class="about-content-section">
+
+        <div class="about-container">
+
+            <div class="about-section-heading">
+
+                <span class="about-label">
+                    WHY IMAGEFORGE
+                </span>
+
+
+                <h2>
+                    Built around simplicity.
+                </h2>
+
+
+                <p>
+                    Useful tools should feel straightforward.
+                </p>
+
+            </div>
+
+
+
+            <div class="about-features-grid">
+
+
+                <div class="about-feature-card">
+
+                    <div class="about-feature-icon">
+                        ⚡
+                    </div>
+
+
+                    <h3>
+                        Fast
+                    </h3>
+
+
+                    <p>
+                        Get through common image tasks without
+                        unnecessary steps.
+                    </p>
+
+                </div>
+
+
+
+                <div class="about-feature-card">
+
+                    <div class="about-feature-icon">
+                        ◎
+                    </div>
+
+
+                    <h3>
+                        Simple
+                    </h3>
+
+
+                    <p>
+                        Clean interfaces and focused controls make
+                        each tool easy to understand.
+                    </p>
+
+                </div>
+
+
+
+                <div class="about-feature-card">
+
+                    <div class="about-feature-icon">
+                        🔒
+                    </div>
+
+
+                    <h3>
+                        Privacy Focused
+                    </h3>
+
+
+                    <p>
+                        ImageForge is designed with a privacy-conscious
+                        approach to image processing.
+                    </p>
+
+                </div>
+
+
+
+                <div class="about-feature-card">
+
+                    <div class="about-feature-icon">
+                        ◫
+                    </div>
+
+
+                    <h3>
+                        Responsive
+                    </h3>
+
+
+                    <p>
+                        Designed to work comfortably across desktop,
+                        tablet, and mobile devices.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         HOW IT WORKS
+         ===================================================== -->
+
+    <section class="about-content-section">
+
+        <div class="about-container">
+
+            <div class="about-section-heading">
+
+                <span class="about-label">
+                    HOW IT WORKS
+                </span>
+
+
+                <h2>
+                    Three simple steps.
+                </h2>
+
+            </div>
+
+
+
+            <div class="about-steps">
+
+
+                <div class="about-step-card">
+
+                    <div class="about-step-number">
+                        01
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            Upload
+                        </h3>
+
+
+                        <p>
+                            Choose an image from your device or
+                            drag it into the selected tool.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="about-step-card">
+
+                    <div class="about-step-number">
+                        02
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            Configure
+                        </h3>
+
+
+                        <p>
+                            Select the settings and options you
+                            need for your image.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="about-step-card">
+
+                    <div class="about-step-number">
+                        03
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            Download
+                        </h3>
+
+
+                        <p>
+                            Process your image and download the
+                            finished result.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         BILVASOFTWARE
+         ===================================================== -->
+
+    <section class="about-content-section">
+
+        <div class="about-container">
+
+            <div class="bilva-card">
+
+                <div class="bilva-card-glow"></div>
+
+
+                <div class="bilva-content">
+
+                    <span class="about-label">
+                        BUILT BY BILVASOFTWARE
+                    </span>
+
+
+                    <h2>
+                        Technology with a practical purpose.
+                    </h2>
+
+
+                    <p>
+                        BilvaSoftware develops practical software
+                        and digital tools designed to make everyday
+                        tasks simpler and more accessible.
+                    </p>
+
+
+                    <p>
+                        ImageForge is one of those projects — a focused
+                        collection of image tools built around a simple
+                        principle: useful functionality should not feel
+                        complicated.
+                    </p>
+
+                </div>
+
+
+
+                <div class="bilva-company-mark">
+
+                    <div class="bilva-logo-wrapper">
+
+                        <img src="~/images/bilvasoftware-logo.png"
+                             alt="BilvaSoftware Logo"
+                             class="bilvasoftware-logo" />
+
+                    </div>
+
+
+                    <strong>
+                        BilvaSoftware
+                    </strong>
+
+
+                    <span>
+                        Software &amp; Digital Tools
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CONNECT
+         ===================================================== -->
+
+    <section class="about-content-section">
+
+        <div class="about-container">
+
+            <div class="about-section-heading">
+
+                <span class="about-label">
+                    CONNECT WITH US
+                </span>
+
+
+                <h2>
+                    Follow BilvaSoftware.
+                </h2>
+
+
+                <p>
+                    Follow our projects, updates, development,
+                    and future work.
+                </p>
+
+            </div>
+
+
+
+            <div class="about-social-grid">
+
+
+                <!-- GitHub -->
+
+                <a href="https://github.com/bilvasoftware"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="about-social-card">
+
+                    <div class="social-icon">
+                        GH
+                    </div>
+
+
+                    <div class="social-content">
+
+                        <strong>
+                            GitHub
+                        </strong>
+
+
+                        <span>
+                            BilvaSoftware projects
+                        </span>
+
+                    </div>
+
+
+                    <span class="social-arrow">
+                        ↗
+                    </span>
+
+                </a>
+
+
+
+                <!-- LinkedIn -->
+
+                <a href="https://www.linkedin.com/in/bilva-software-aa532a421/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="about-social-card">
+
+                    <div class="social-icon">
+                        in
+                    </div>
+
+
+                    <div class="social-content">
+
+                        <strong>
+                            LinkedIn
+                        </strong>
+
+
+                        <span>
+                            Bilva Software
+                        </span>
+
+                    </div>
+
+
+                    <span class="social-arrow">
+                        ↗
+                    </span>
+
+                </a>
+
+
+
+                <!-- YouTube -->
+
+                <a href="https://www.youtube.com/@@bilvaSoftware"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="about-social-card">
+
+                    <div class="social-icon">
+                        YT
+                    </div>
+
+
+                    <div class="social-content">
+
+                        <strong>
+                            YouTube
+                        </strong>
+
+
+                        <span>
+                            BilvaSoftware
+                        </span>
+
+                    </div>
+
+
+                    <span class="social-arrow">
+                        ↗
+                    </span>
+
+                </a>
+
+
+
+                <!-- Telegram -->
+
+                <a href="https://t.me/bilvasoftware"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="about-social-card">
+
+                    <div class="social-icon">
+                        TG
+                    </div>
+
+
+                    <div class="social-content">
+
+                        <strong>
+                            Telegram
+                        </strong>
+
+
+                        <span>
+                            BilvaSoftware
+                        </span>
+
+                    </div>
+
+
+                    <span class="social-arrow">
+                        ↗
+                    </span>
+
+                </a>
+
+
+
+                <!-- Blog -->
+
+                <a href="https://www.blogger.com/blog/posts/4844009185214410441"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="about-social-card">
+
+                    <div class="social-icon">
+                        ✎
+                    </div>
+
+
+                    <div class="social-content">
+
+                        <strong>
+                            Blog
+                        </strong>
+
+
+                        <span>
+                            BilvaSoftware Blog
+                        </span>
+
+                    </div>
+
+
+                    <span class="social-arrow">
+                        ↗
+                    </span>
+
+                </a>
+
+
+
+                <!-- Email -->
+
+                <a href="mailto:bilvasoftware@gmail.com"
+                   class="about-social-card">
+
+                    <div class="social-icon">
+                        ✉
+                    </div>
+
+
+                    <div class="social-content">
+
+                        <strong>
+                            Email
+                        </strong>
+
+
+                        <span>
+                            bilvasoftware@gmail.com
+                        </span>
+
+                    </div>
+
+
+                    <span class="social-arrow">
+                        →
+                    </span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FINAL CTA
+         ===================================================== -->
+
+    <section class="about-content-section about-final-section">
+
+        <div class="about-container">
+
+            <div class="about-cta">
+
+                <div class="about-cta-glow"></div>
+
+
+                <span class="about-label">
+                    GET STARTED
+                </span>
+
+
+                <h2>
+                    Ready to work with your image?
+                </h2>
+
+
+                <p>
+                    Choose an ImageForge tool and get started.
+                </p>
+
+
+                <div class="about-cta-actions">
+
+                    <!-- Opens converter separately -->
+
+                    <a asp-controller="Home"
+                       asp-action="Index"
+                       class="about-primary-button">
+
+                        Start Converting
+
+                        <span>→</span>
+
+                    </a>
+
+
+                    <a asp-controller="Home"
+                       asp-action="Index"
+                       class="about-secondary-button">
+
+                        Explore ImageForge
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</section>

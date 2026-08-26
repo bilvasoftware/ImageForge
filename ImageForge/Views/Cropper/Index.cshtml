@@ -1,0 +1,561 @@
+﻿@{
+    ViewData["Title"] = "Image Cropper";
+}
+
+<section class="hero-section cropper-page">
+
+    <div class="hero-glow glow-one"></div>
+    <div class="hero-glow glow-two"></div>
+
+    <div class="container">
+
+        <!-- =========================
+             HERO
+             ========================= -->
+
+        <div class="hero-content">
+
+            <div class="hero-badge">
+                <span class="status-dot"></span>
+                Fast & Simple Image Tools
+            </div>
+
+            <h1>
+                Crop Your Images
+                <span>Precisely.</span>
+            </h1>
+
+            <p class="hero-description">
+                Crop your images to the exact area you need,
+                choose your output format, and download instantly.
+            </p>
+
+        </div>
+
+
+        <div class="imageforge-privacy-notice">
+    <div class="imageforge-privacy-icon">
+        🔒
+    </div>
+
+    <div class="imageforge-privacy-content">
+        <strong>Private &amp; Secure</strong>
+
+        <p>
+            Your images are processed only for the operation you request.
+            <b>We do not permanently store, sell, share, or reuse your images.</b>
+        </p>
+
+        <span>
+            Free to use <i>•</i>
+            No account required <i>•</i>
+            Privacy focused
+        </span>
+    </div>
+</div>
+
+        <!-- =========================
+             CROPPER CARD
+             ========================= -->
+
+        <div class="converter-card">
+
+            <!-- =========================
+                 UPLOAD ZONE
+                 ========================= -->
+
+            <div class="upload-zone"
+                 id="cropUploadZone">
+
+                <div class="upload-icon">
+                    ✂
+                </div>
+
+                <h2>
+                    Drop your image here
+                </h2>
+
+                <p>
+                    Drag & drop an image or choose a file from your device.
+                </p>
+
+                <label for="cropImageInput"
+                       class="browse-button">
+
+                    <span>＋</span>
+                    Browse File
+
+                </label>
+
+                <input type="file"
+                       id="cropImageInput"
+                       accept="image/jpeg,image/png,image/webp"
+                       hidden />
+
+                <div class="supported-formats">
+
+                    <span>JPG</span>
+                    <span>PNG</span>
+                    <span>WEBP</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 CROP WORKSPACE
+                 ========================= -->
+
+            <div class="cropper-workspace"
+                 id="cropWorkspace"
+                 hidden>
+
+
+                <!-- =========================
+                     WORKSPACE HEADER
+                     ========================= -->
+
+                <div class="cropper-workspace-header">
+
+                    <div>
+
+                        <h3>
+                            Crop Your Image
+                        </h3>
+
+                        <p id="cropImageInfo">
+                            Select the area you want to keep.
+                        </p>
+
+                    </div>
+
+
+                    <button type="button"
+                            class="clear-button"
+                            id="cropClearImage">
+
+                        Remove Image
+
+                    </button>
+
+                </div>
+
+
+                <!-- =========================
+                     CROP AREA
+                     ========================= -->
+
+                <div class="cropper-stage"
+                     id="cropperStage">
+
+                    <div class="cropper-image-container"
+                         id="cropImageContainer">
+
+                        <img id="cropImage"
+                             alt="Image to crop" />
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     CROP CONTROLS
+                     ========================= -->
+
+                <div class="cropper-controls">
+
+
+                    <!-- =========================
+                         ASPECT RATIO
+                         ========================= -->
+
+                    <div class="cropper-control-group">
+
+                        <label>
+                            Aspect Ratio
+                        </label>
+
+                        <div class="cropper-ratio-options">
+
+                            <button type="button"
+                                    class="cropper-ratio-button active"
+                                    data-ratio="free">
+
+                                Free
+
+                            </button>
+
+                            <button type="button"
+                                    class="cropper-ratio-button"
+                                    data-ratio="1">
+
+                                1 : 1
+
+                            </button>
+
+                            <button type="button"
+                                    class="cropper-ratio-button"
+                                    data-ratio="1.7777778">
+
+                                16 : 9
+
+                            </button>
+
+                            <button type="button"
+                                    class="cropper-ratio-button"
+                                    data-ratio="1.3333333">
+
+                                4 : 3
+
+                            </button>
+
+                            <button type="button"
+                                    class="cropper-ratio-button"
+                                    data-ratio="0.8">
+
+                                4 : 5
+
+                            </button>
+
+                            <button type="button"
+                                    class="cropper-ratio-button"
+                                    data-ratio="0.5625">
+
+                                9 : 16
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =========================
+                         CROP SIZE
+                         ========================= -->
+
+                    <div class="cropper-control-group">
+
+                        <label>
+                            Crop Size
+                        </label>
+
+                        <div class="crop-size-display">
+
+                            <div class="crop-size-item">
+
+                                <span>
+                                    Width
+                                </span>
+
+                                <strong id="cropWidth">
+                                    0 px
+                                </strong>
+
+                            </div>
+
+                            <span class="crop-size-x">
+                                ×
+                            </span>
+
+                            <div class="crop-size-item">
+
+                                <span>
+                                    Height
+                                </span>
+
+                                <strong id="cropHeight">
+                                    0 px
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =========================
+                         OUTPUT FORMAT
+                         ========================= -->
+
+                    <div class="cropper-control-group">
+
+                        <label for="cropOutputFormat">
+                            Output Format
+                        </label>
+
+                        <select id="cropOutputFormat"
+                                class="modern-select">
+
+                            <option value="webp">
+                                WEBP
+                            </option>
+
+                            <option value="jpg">
+                                JPG
+                            </option>
+
+                            <option value="png">
+                                PNG
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     CROP ACTIONS
+                     ========================= -->
+
+                <div class="cropper-actions">
+
+                    <button type="button"
+                            class="crop-reset-button"
+                            id="cropResetButton">
+
+                        ↺
+                        Reset Crop
+
+                    </button>
+
+
+                    <button type="button"
+                            class="convert-button"
+                            id="cropButton">
+
+                        <span>✂</span>
+                        Crop Image
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 CROP RESULT
+                 ========================= -->
+
+            <div class="crop-result-section"
+                 id="cropResultSection"
+                 hidden>
+
+                <div class="results-header">
+
+                    <div class="results-title-area">
+
+                        <div class="results-success-icon">
+                            ✓
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Crop Complete
+                            </h3>
+
+                            <p id="cropResultSummary">
+                                Your cropped image is ready.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="crop-result-card">
+
+                    <div class="crop-result-preview">
+
+                        <img id="cropResultImage"
+                             alt="Cropped image preview" />
+
+                    </div>
+
+
+                    <div class="crop-result-details">
+
+                        <div class="result-name"
+                             id="cropResultFileName">
+                            cropped-image.webp
+                        </div>
+
+
+                        <div class="format-conversion">
+
+                            <span class="format-badge original-format"
+                                  id="cropOriginalFormat">
+                                JPG
+                            </span>
+
+                            <span class="format-arrow">
+                                →
+                            </span>
+
+                            <span class="format-badge converted-format"
+                                  id="cropConvertedFormat">
+                                WEBP
+                            </span>
+
+                        </div>
+
+
+                        <div class="compression-stats">
+
+                            <div class="compression-stat">
+
+                                <span class="compression-stat-label">
+                                    Width
+                                </span>
+
+                                <strong class="compression-stat-value"
+                                        id="cropResultWidth">
+                                    0 px
+                                </strong>
+
+                            </div>
+
+
+                            <div class="compression-stat">
+
+                                <span class="compression-stat-label">
+                                    Height
+                                </span>
+
+                                <strong class="compression-stat-value"
+                                        id="cropResultHeight">
+                                    0 px
+                                </strong>
+
+                            </div>
+
+
+                            <div class="compression-stat">
+
+                                <span class="compression-stat-label">
+                                    File Size
+                                </span>
+
+                                <strong class="compression-stat-value"
+                                        id="cropResultSize">
+                                    0 KB
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <button type="button"
+                            class="download-result-button"
+                            id="cropDownloadButton">
+
+                        <span>↓</span>
+                        Download
+
+                    </button>
+
+                </div>
+
+
+                <div class="results-actions">
+
+                    <button type="button"
+                            class="convert-more-button"
+                            id="cropAnotherButton">
+
+                        ＋
+                        Crop Another Image
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             FEATURE CARDS
+             ========================= -->
+
+        <div class="features-section">
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    ✂️
+                </div>
+
+                <h3>
+                    Precise Cropping
+                </h3>
+
+                <p>
+                    Select exactly the part of your image
+                    you want to keep.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    📐
+                </div>
+
+                <h3>
+                    Aspect Ratios
+                </h3>
+
+                <p>
+                    Quickly crop using popular ratios such
+                    as 1:1, 16:9 and 4:5.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🔒
+                </div>
+
+                <h3>
+                    Privacy Focused
+                </h3>
+
+                <p>
+                    Your image is processed securely and
+                    is not displayed publicly.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+@section Scripts {
+
+    <script src="~/js/cropper.js"
+            asp-append-version="true"></script>
+
+}
